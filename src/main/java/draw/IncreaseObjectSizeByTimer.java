@@ -8,11 +8,9 @@ import utilities.Counter;
 
 public class IncreaseObjectSizeByTimer {
 	
-	public static void startTimerForExpansion(IDrawObject iDrawObject,GameObject gameObject, AtomicInteger timeCounter, Graphics2D g2) {
-		if (timeCounter.get() > 0) {
+	public static void startTimerForExpansion(IDrawObject iDrawObject,GameObject gameObject, Graphics2D g2) {
 			iDrawObject.draw(g2);
-			Counter.timer(timeCounter, gameObject);
-		}
+			Counter.timer(gameObject);
 	}
 	
 	public static void increaseGameObjectSize(GameObject gameObject, int sizeIncrease) {

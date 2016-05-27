@@ -8,7 +8,7 @@ public class Ball extends GameObject {
 	private int speed;
 	private int xVelocity;
 	private int yVelocity;
-	private boolean alive = true;
+	
 
 	public Ball(int x, int y) {
 		super(x, y);
@@ -57,13 +57,5 @@ public class Ball extends GameObject {
 
 	public void setSpeed(int speed) {
 		this.speed = speed;
-	}
-
-	public boolean isAlive() {
-		return alive;
-	}
-
-	public void setAlive(boolean alive) {
-		this.alive = alive;
 	}
 }
