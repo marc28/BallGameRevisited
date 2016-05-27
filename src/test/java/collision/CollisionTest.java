@@ -31,7 +31,7 @@ public class CollisionTest {
 	@Test
 	public void testInsideCollision() throws Exception {
 		//Reflection Example
-		Method method = Collision.class.getDeclaredMethod("hasCollisionOccured", Explosion.class, Ball.class);
+		Method method = Collision.class.getDeclaredMethod("hasCollisionOccured", GameObject.class, GameObject.class);
 		method.setAccessible(true);
 		boolean answer = (Boolean) method.invoke(new Collision(), explosion, balls.get(0));
 		assertTrue(answer);
@@ -40,7 +40,7 @@ public class CollisionTest {
 	@Test
 	public void testOutsideCollision() throws Exception {
 		//Reflection Example
-		Method method = Collision.class.getDeclaredMethod("hasCollisionOccured", Explosion.class, Ball.class);
+		Method method = Collision.class.getDeclaredMethod("hasCollisionOccured",  GameObject.class, GameObject.class);
 		method.setAccessible(true);
 		boolean answer = (Boolean) method.invoke(new Collision(), explosion, balls.get(1));
 		assertFalse(answer);
