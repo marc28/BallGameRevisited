@@ -45,14 +45,4 @@ public class CollisionTest {
 		boolean answer = (Boolean) method.invoke(new Collision(), explosion, balls.get(1));
 		assertFalse(answer);
 	}
-	
-	@Test
-	public void testdelete() throws Exception {
-		//Reflection Example
-		Method method = Collision.class.getDeclaredMethod("hasCollisionOccured",  GameObject.class, GameObject.class);
-		method.setAccessible(true);
-		boolean answer = (Boolean) method.invoke(new Collision(), explosion, balls.get(1));
-		assertFalse(answer);
-	}
-
 }
