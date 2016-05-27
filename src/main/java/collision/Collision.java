@@ -4,6 +4,7 @@ import java.util.List;
 
 import components.Ball;
 import components.Explosion;
+import components.GameObject;
 
 public class Collision {
 
@@ -19,13 +20,27 @@ public class Collision {
 		}
 	}
 
-	private static boolean hasCollisionOccured(Explosion exp, Ball b) {
+	public static void hasDeadBallCollidedWithAliveBall(List<Ball> balls) {
+		for (Ball deadBall : balls) {
+			if (!deadBall.isAlive()) {
+				for (Ball otherBall : balls) {
+					if (hasCollisionOccured(deadBall, otherBall)) {
+						otherBall.setxVelocity(0);
+						otherBall.setyVelocity(0);
+						otherBall.setAlive(false);
+					}
+				}
+			}
+		}
+	}
+
+	private static boolean hasCollisionOccured(GameObject exp, GameObject b) {
 		double xDif = b.getX() - exp.getX(); // the x values
 		double yDif = b.getY() - exp.getY(); // the y values
 		double distanceSquared = xDif * xDif + yDif * yDif;
 		int calculatedDiff = (b.getRadius() + (exp.getRadius() / 2)) * (b.getRadius() + (exp.getRadius() / 2));
 		boolean collision = distanceSquared < calculatedDiff;
-		System.out.println("Is " + distanceSquared + " < " + calculatedDiff + " ??? --> " + collision );
+		//System.out.println("Is " + distanceSquared + " < " + calculatedDiff + " ??? --> " + collision);
 		return collision;
 	}
 }

@@ -76,7 +76,9 @@ public class GamePanel extends JPanel implements Runnable {
 		move.moveBall();
 		if (drawExplosion) {
 			IncreaseObjectSizeByTimer.startTimerForExpansion(drawExp, userExplosion, timeCounter, g2);
+			Collision.collisionDetection(allBalls, userExplosion);
+			Collision.hasDeadBallCollidedWithAliveBall(allBalls);
 		}
-		Collision.collisionDetection(allBalls, userExplosion);
+		
 	}
 }
