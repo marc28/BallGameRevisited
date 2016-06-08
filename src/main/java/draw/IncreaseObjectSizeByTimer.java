@@ -6,7 +6,7 @@ import components.GameObject;
 import utilities.Counter;
 
 public class IncreaseObjectSizeByTimer {
-	
+	//new branch
 	public static void startTimerForExpansion(IDrawObject iDrawObject,GameObject gameObject, Graphics2D g2) {
 			iDrawObject.draw(g2);
 			Counter.timer(gameObject);
