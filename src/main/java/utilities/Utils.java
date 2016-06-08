@@ -29,7 +29,7 @@ public class Utils {
 	
 	public static List<Ball> fillBallList() {
 		List<Ball> allBalls = new ArrayList<Ball>();
-		for (int i = 0; i < 30; i++) {
+		for (int i = 0; i < 10; i++) {
 			int ballX = makeRandomNumber(0, MainFrame.SCREEN_WIDTH);
 			int ballY = makeRandomNumber(0, MainFrame.SCREEN_HEIGHT);
 			allBalls.add(new Ball(ballX, ballY));

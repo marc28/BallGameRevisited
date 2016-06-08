@@ -8,7 +8,7 @@ import components.GameObject;
 
 public class Collision {
 
-	public static void collisionDetection(List<Ball> balls, Explosion exp) {
+	public static void detectionForBallWithExplosion(List<Ball> balls, Explosion exp) {
 		if (exp != null) {
 			for (Ball b : balls) {
 				if (hasCollisionOccured(exp, b)) {
@@ -20,7 +20,7 @@ public class Collision {
 		}
 	}
 
-	public static void hasDeadBallCollidedWithAliveBall(List<Ball> balls) {
+	public static void detectionForBallWithDeadBall(List<Ball> balls) {
 		for (Ball deadBall : balls) {
 			if (!deadBall.isAlive()) {
 				for (Ball otherBall : balls) {

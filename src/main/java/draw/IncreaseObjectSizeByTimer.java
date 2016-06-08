@@ -1,7 +1,6 @@
 package draw;
 
 import java.awt.Graphics2D;
-import java.util.concurrent.atomic.AtomicInteger;
 
 import components.GameObject;
 import utilities.Counter;
