@@ -11,7 +11,7 @@ import java.util.concurrent.atomic.AtomicInteger;
 
 import javax.swing.JPanel;
 
-import collision.Collision;
+import collision.CollisionDetection;
 import components.Ball;
 import components.Explosion;
 import draw.DrawBall;
@@ -76,9 +76,11 @@ public class GamePanel extends JPanel implements Runnable {
 		move.moveBall();
 		if (drawExplosion) {
 			userExplosion.setGrowing(true);
-			IncreaseObjectSizeByTimer.startTimerForExpansion(drawExp, userExplosion, g2);
-			Collision.detectionForBallWithExplosion(allBalls, userExplosion);
-			Collision.detectionForBallWithDeadBall(allBalls);
+			IncreaseObjectSizeByTimer.startTimerForExplosionExpansion(drawExp, userExplosion, g2);
+			CollisionDetection.detectionForBallWithExplosion(allBalls, userExplosion);
+			CollisionDetection.detectionForBallWithDeadBall(allBalls);
+			IncreaseObjectSizeByTimer.startTimerForBallExpansion(drawBall,allBalls,g2);
+			
 		}
 		
 	}

@@ -6,7 +6,7 @@ import components.Ball;
 import components.Explosion;
 import components.GameObject;
 
-public class Collision {
+public class CollisionDetection {
 
 	public static void detectionForBallWithExplosion(List<Ball> balls, Explosion exp) {
 		if (exp != null) {
@@ -14,7 +14,8 @@ public class Collision {
 				if (hasCollisionOccured(exp, b)) {
 					b.setxVelocity(0);
 					b.setyVelocity(0);
-					b.setAlive(false);
+					//b.setAlive(false);
+					b.setGrowing(true);
 				}
 			}
 		}
@@ -22,12 +23,13 @@ public class Collision {
 
 	public static void detectionForBallWithDeadBall(List<Ball> balls) {
 		for (Ball deadBall : balls) {
-			if (!deadBall.isAlive()) {
+			if (deadBall.isGrowing()) {
 				for (Ball otherBall : balls) {
 					if (hasCollisionOccured(deadBall, otherBall)) {
 						otherBall.setxVelocity(0);
 						otherBall.setyVelocity(0);
-						otherBall.setAlive(false);
+						//otherBall.setAlive(false);
+						otherBall.setGrowing(true);
 					}
 				}
 			}
